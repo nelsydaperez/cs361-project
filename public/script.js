@@ -5,14 +5,32 @@
 
 var context = document.getElementById('puzzle').getContext('2d');
 
+// Get the URL parameters for the puzzle
+var query = function() {
+  let params = (new URL(location)).searchParams;
+  return {
+    image: params.get('imageQuery'),
+    difficulty: params.get('difficulty')
+  };
+}();
+
 var img = new Image();
-// Placeholder image for the sliding puzzle. This will change based on the image query and the url obtained from the image server.
-img.src = 'https://www.pelicanbaylighthouseco.com/assets/images/puzzles/white%20mountain%20puzzles/2701554a.jpg';
+
+// Calls image server to get image based on query
+img.src = 'http://flip3.engr.oregonstate.edu:17778/getImage?searchTerms=' + query.image + '&response_type=file';
+
 img.addEventListener('load', drawTiles, false);
 
 var boardSize = document.getElementById('puzzle').width;
-// Placeholder tile count for the sliding puzzle. The number represents the width/height of the image in # of blocks.
-var tileCount = 3;
+
+// Breaks image into number of tiles based on selected difficulty
+if (query.difficulty === 'easy'){
+  tileCount = 3;
+}
+else if (query.difficulty === 'normal'){
+  tileCount = 4;
+}
+else { tileCount = 5; };
 
 var tileSize = boardSize / tileCount;
 
