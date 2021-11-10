@@ -7,28 +7,28 @@
   </head>
   <body>
     <h1>Random Puzzle Generator - Game Settings</h1>
-    <form id="imageQueryForm">
-      <label for="imageQuery">Image of a: </label>
-      <input id="imageQuery" name="imageQuery" />
+    <form id="settings" action='./puzzle.html'>
+      <div>
+        <label for="imageQuery">Image of a: </label>
+        <input id="imageQuery" name="imageQuery" />
+      </div>
+      <div>
+        <p>Select a difficulty:
+        <br />
+        <label>
+          <input type="radio" name="difficulty" value='easy' />Easy
+        </label>
+        <label>
+          <input type="radio" name="difficulty" value='normal' />Normal
+        </label>
+        <label>
+          <input type="radio" name="difficulty" value='hard' />Hard
+        </label>
+        </p>
+      </div>
+      <div>
+        <input type="submit" id="settingSubmit" value="Generate Puzzle!">
+      </div>
     </form>
-    <br />
-    <form id="difficultySelect">
-      <p>Select a difficulty:
-      <br />
-      <label>
-        <input type="radio" name="difficulty" value='easy' />Easy
-      </label>
-      <label>
-        <input type="radio" name="difficulty" value='normal' />Normal
-      </label>
-      <label>
-        <input type="radio" name="difficulty" value='hard' />Hard
-      </label>
-      </p>
-    </form>
-    <br />
-    <a href='./puzzle.html'>
-      <button type="button" className="generate">Generate Puzzle!</button>
-    </a>
   </body>
 </html>
