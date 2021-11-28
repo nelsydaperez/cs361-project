@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "./node_modules/forever/bin/forever start app.js",
+    "start:dev": "nodemon app.js",
+    "stop": "./node_modules/forever/bin/forever stop app.js"
   },
   "repository": {
     "type": "git",
