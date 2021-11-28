@@ -1,11 +1,9 @@
 'use strict';
 
-// NOTE: Don't change the port number
-const PORT = 8672;
-
+// Required packages
 const express = require("express");
+require('dotenv').config();
 const app = express();
-
 
 app.use(express.urlencoded({
     extended: true
@@ -13,6 +11,6 @@ app.use(express.urlencoded({
 
 app.use(express.static('public'));
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server listening on port ${process.env.PORT}...`);
 });
