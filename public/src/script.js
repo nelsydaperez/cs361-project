@@ -1,6 +1,6 @@
 // Citation for the following script
 // Date: 10/29/2021
-// Copied from: Image Manipulation with HTML5 Canvas: A Sliding Puzzle
+// Adapted from: Image Manipulation with HTML5 Canvas: A Sliding Puzzle
 // Source: https://www.sitepoint.com/image-manipulation-with-html5-canvas-a-sliding-puzzle-2/
 
 var context = document.getElementById('puzzle').getContext('2d');
