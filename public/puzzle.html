@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Random Puzzle Generator - Puzzle</title>
-    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
   </head>
   <body>
-    <canvas id="puzzle" width="500px" height="500px"></canvas>
-    <script src="./script.js"></script>
+    <p>
+      Click here for game rules: <a href="JavaScript:newPopup('./help.html');"><img src="./img/help.png" alt="help" /></a>
+    </p>
+    <p style="text-align:left;">Puzzle board: 
+      <span style="float:right;">Solution image (uncropped): </span>
+    </p>
+    <canvas style="text-align:left;" id="puzzle" width="450px" height="450px"></canvas>
+    <span style="float:right;">
+      <img id="solution" src="" />
+    </span>
+    <script src="./src/script.js"></script>
   </body>
 </html>
