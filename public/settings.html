@@ -3,32 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Random Puzzle Generator - Settings</title>
-    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/background.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
   </head>
   <body>
-    <h1>Random Puzzle Generator - Game Settings</h1>
-    <form id="settings" action='./puzzle.html'>
-      <div>
-        <label for="imageQuery">Image of a: </label>
-        <input id="imageQuery" name="imageQuery" />
-      </div>
-      <div>
-        <p>Select a difficulty:
-        <br />
-        <label>
-          <input type="radio" name="difficulty" value='easy' />Easy
-        </label>
-        <label>
-          <input type="radio" name="difficulty" value='normal' />Normal
-        </label>
-        <label>
-          <input type="radio" name="difficulty" value='hard' />Hard
-        </label>
-        </p>
-      </div>
-      <div>
-        <input type="submit" id="settingSubmit" value="Generate Puzzle!">
-      </div>
-    </form>
+    <div class="container">
+      <h1>Random Puzzle Generator - Game Settings</h1>
+      <form id="settings" action='./puzzle.html'>
+        <div>
+          <label for="imageQuery">Image of a: </label>
+          <input id="imageQuery" name="imageQuery" />
+        </div>
+        <div>
+          <p>Select a difficulty:
+          <br />
+          <label>
+            <input type="radio" name="difficulty" value='easy' />Easy
+          </label>
+          <label>
+            <input type="radio" name="difficulty" value='normal' />Normal
+          </label>
+          <label>
+            <input type="radio" name="difficulty" value='hard' />Hard
+          </label>
+          </p>
+        </div>
+        <div>
+          <input class="button" type="submit" id="settingSubmit" value="Generate Puzzle!">
+        </div>
+      </form>
+    </div>
   </body>
 </html>
