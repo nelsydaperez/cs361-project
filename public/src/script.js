@@ -4,8 +4,8 @@
 // Source: https://www.sitepoint.com/image-manipulation-with-html5-canvas-a-sliding-puzzle-2/
 
 var context = document.getElementById('puzzle').getContext('2d');
+context.lineWidth = 2;
 
-// Get the URL parameters for the puzzle
 var query = function() {
   let params = (new URL(location)).searchParams;
   return {
@@ -16,8 +16,13 @@ var query = function() {
 
 var img = new Image();
 
-// Calls image server to get image based on query
-img.src = 'http://flip3.engr.oregonstate.edu:17778/getImage?searchTerms=' + query.image + '&response_type=file';
+// Integration of image microservice
+img.src = 'http://flip3.engr.oregonstate.edu:17778/getImage'
+  + '?searchTerms=' + query.image
+  + '&height=500'
+  + '&response_type=file';
+
+document.getElementById("solution").src = img.src;
 
 img.addEventListener('load', drawTiles, false);
 
@@ -55,7 +60,10 @@ document.getElementById('puzzle').onclick = function(e) {
     drawTiles();
   }
   if (solved) {
-    setTimeout(function() {alert("You solved it!");}, 500);
+    setTimeout(function() {
+      alert("Congratulations! You will be redirected to the title screen.");
+      window.location.href = "index.html";
+    }, 500);
   }
 };
 
@@ -114,4 +122,10 @@ function checkSolved() {
     }
   }
   solved = flag;
+}
+
+// Used for the display of the How to Play page.
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=800,width=1350,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 }
